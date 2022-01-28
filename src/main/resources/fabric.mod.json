@@ -1,31 +1,25 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "world-timer",
   "version": "${version}",
-
-  "name": "Example Mod",
+  "name": "World Timer",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "SavageAvocado"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
+    "homepage": "https://savagedev.net/",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
-
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
-
+  "icon": "assets/modid/icon.jpg",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.savagedev.worldtimer.WorldTimerMod"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
-
+  "mixins": [],
   "depends": {
     "fabricloader": ">=0.12.12",
     "fabric": "*",
