@@ -10,12 +10,15 @@ import java.awt.*;
 public class HudRenderListener implements HudRenderCallback {
     private static final Color MC_RED = new Color(255, 85, 85);
 
+    private static final int X_OFFSET = 200;
+    private static final int Y_OFFSET = 26;
+
     @Override
     public void onHudRender(MatrixStack matrixStack, float tickDelta) {
         final int scale = MinecraftClient.getInstance().options.guiScale;
 
-        final int windowWidthScaled = MinecraftClient.getInstance().getWindow().getWidth() / (scale == 0 ? 1 : scale);
-        final int windowHeightScaled = MinecraftClient.getInstance().getWindow().getHeight() / (scale == 0 ? 1 : scale);
+        final int windowWidthScaled = MinecraftClient.getInstance().getWindow().getWidth() / (scale == 0 ? 8 : scale);
+        final int windowHeightScaled = MinecraftClient.getInstance().getWindow().getHeight() / (scale == 0 ? 8 : scale);
 
         final long timePlayed = MinecraftClient.getInstance().player.getWorld().getTime();
 
@@ -24,8 +27,8 @@ public class HudRenderListener implements HudRenderCallback {
         final int strLength = MinecraftClient.getInstance().inGameHud.getTextRenderer().getWidth(timeFormatted);
         final int fontHeight = MinecraftClient.getInstance().inGameHud.getTextRenderer().fontHeight;
 
-        final int x = windowWidthScaled - strLength - (200 / (scale == 0 ? 1 : scale));
-        final int y = windowHeightScaled - fontHeight - (26 / (scale == 0 ? 1 : scale));
+        final int x = windowWidthScaled - strLength - (X_OFFSET / (scale == 0 ? 8 : scale));
+        final int y = windowHeightScaled - fontHeight - (Y_OFFSET / (scale == 0 ? 8 : scale));
 
         MinecraftClient.getInstance().inGameHud.getTextRenderer().draw(matrixStack, timeFormatted, x, y, MC_RED.getRGB());
     }
