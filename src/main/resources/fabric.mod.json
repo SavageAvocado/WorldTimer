@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "id": "world-timer",
+  "id": "world-timer-mod",
   "version": "${version}",
   "name": "World Timer",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "A simple mod that shows how much time you've spent playing in a Minecraft world.",
   "authors": [
     "SavageAvocado"
   ],
   "contact": {
     "homepage": "https://savagedev.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/SavageAvocado/WorldTimer"
   },
   "license": "CC0-1.0",
   "icon": "assets/modid/icon.jpg",
