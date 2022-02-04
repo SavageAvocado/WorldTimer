@@ -22,6 +22,18 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    modImplementation 'org.spongepowered:configurate-core:4.1.2'
+    modImplementation 'org.spongepowered:configurate-yaml:4.1.2'
+
+    include 'org.spongepowered:configurate-core:4.1.2'
+    include 'org.spongepowered:configurate-yaml:4.1.2'
+    include 'org.spongepowered:configurate-yaml:4.1.2'
+
+    include 'com.google.errorprone:error_prone_annotations:2.11.0'
+    include 'org.checkerframework:checker-qual:3.21.1'
+    include 'io.leangen.geantyref:geantyref:1.3.13'
+    include 'org.yaml:snakeyaml:1.30'
 }
 
 processResources {
@@ -34,7 +46,7 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
     // Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
-    it.options.release = 17
+    it.options.release.set(17)
 }
 
 java {
